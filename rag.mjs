@@ -13,7 +13,7 @@ const [, , prompt] = process.argv;
 const pg = postgres({ connectionInfo: pgsqlConfig, path: import.meta.dirname });
 
 const anthropic = new Anthropic({
-	apiKey: api, // defaults to process.env["ANTHROPIC_API_KEY"]
+	apiKey: process.env.ANTHROPIC_APIKEY, // defaults to process.env["ANTHROPIC_API_KEY"]
 });
 
 const defPrompt = (deftext, vector) =>
